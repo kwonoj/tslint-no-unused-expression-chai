@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "no-unused-expression-chai": [
+      true,
+      "allow-fast-null-checks"
+    ]
+  },
+  "rulesDirectory": [
+    "../../rules"
+  ]
+}
