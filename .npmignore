@@ -4,3 +4,5 @@ spec
 yarn.lock
 coverage
 typings/
+src/
+test/
