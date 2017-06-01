@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "no-unused-expression-chai": [
+      true,
+      "allow-tagged-template"
+    ]
+  },
+  "rulesDirectory": [
+    "../../rules"
+  ]
+}
