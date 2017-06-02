@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/kwonoj/tslint-no-unused-expression-chai.svg?branch=master)](https://travis-ci.org/kwonoj/tslint-no-unused-expression-chai)
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/tslint-no-unused-expression-chai)
+[![npm](https://img.shields.io/npm/v/tslint-no-unused-expression-chai.svg)](https://www.npmjs.com/package/tslint-no-unused-expression-chai)
 
 # tslint-no-unused-expression-chai
 
