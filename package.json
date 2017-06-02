@@ -1,6 +1,6 @@
 {
   "name": "tslint-no-unused-expression-chai",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom tslint no-unused-expression rule supports chai's expect assertion",
   "config": {
     "commitizen": {
