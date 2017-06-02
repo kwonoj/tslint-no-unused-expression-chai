@@ -7,6 +7,9 @@ import * as path from 'path';
 //This runner will iterate current test fixture directory and
 //will run `tslint --test` against each fixtures.
 
+//original fixture at
+//https://github.com/palantir/tslint/tree/07eb8daf25c5631ca300ae48875d7e509f92cbb8/test/rules/no-unused-expression
+
 const testDirectories = fs.readdirSync(__dirname)
   .map((directory) => path.resolve(__dirname, directory))
   .filter((p) => fs.lstatSync(p).isDirectory());
