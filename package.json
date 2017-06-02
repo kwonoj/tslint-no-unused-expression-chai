@@ -71,5 +71,8 @@
     "tslint": "^5.4.2",
     "typescript": "^2.3.4",
     "validate-commit-msg": "^2.12.1"
+  },
+  "engines": {
+    "node": ">=4"
   }
 }
