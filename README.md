@@ -27,8 +27,17 @@ You can configure tslint rules by replacing existing `no-unused-expression` rule
   ...
 },
 "rulesDirectory": [
-  "node_modules/tslint-no-unused-expression-chai/rules"
+  "tslint-no-unused-expression-chai"
   ...
+]
+```
+
+Alternatively you can just extend the configuration preset provided by this package. It disables `no-unused-expression` and enables `no-unused-expression-chai`.
+
+```js
+"extends": [
+  ...
+  "tslint-no-unused-expression-chai"
 ]
 ```
 
