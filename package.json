@@ -1,6 +1,6 @@
 {
   "name": "tslint-no-unused-expression-chai",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Custom tslint no-unused-expression rule supports chai's expect assertion",
   "main": "rules/index.js",
   "config": {
