@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 import * as Lint from 'tslint';
-import * as tsutils from 'tsutils';
+import { getTokenAtPosition, isIdentifier } from 'tsutils';
 import { Rule as BaseUnusedExpressionRule } from 'tslint/lib/rules/noUnusedExpressionRule';
 
 /**
@@ -9,32 +9,9 @@ import { Rule as BaseUnusedExpressionRule } from 'tslint/lib/rules/noUnusedExpre
  */
 const chaiAssertionPredicate = (failure: Lint.RuleFailure, source: ts.SourceFile) => {
   const failurePosition = failure.getStartPosition();
-  const token = tsutils.getTokenAtPosition(source, failurePosition.getPosition());
-
-  //for any reason locating token is not available, falls back to default rule
-  if (!token) {
-    return true;
-  }
-
-  //check very exact token is identifier, `expect`
-  const isTokenIdentifier = tsutils.isIdentifier(token);
-  if (!isTokenIdentifier) {
-    return true;
-  }
-
-  const parentToken = token.parent;
-  //same as token. located chai assertion should have parent token
-  if (!parentToken) {
-    return true;
-  }
-  //traverse up one parent, check it's call expression
-  const isParentTokenCallExpression = tsutils.isCallExpression(parentToken);
-  if (!isParentTokenCallExpression) {
-    return true;
-  }
-
-  //finally compare actual token text to chai assertion, return false if given token is `expect`
-  return token.getText() !== 'expect';
+  const token = getTokenAtPosition(source, failurePosition.getPosition())!;
+  // check if the offending token is the `expect` in `expect(...)`
+  return !isIdentifier(token) || token.text !== 'expect' || token.parent!.kind !== ts.SyntaxKind.CallExpression;
 };
 
 /**
