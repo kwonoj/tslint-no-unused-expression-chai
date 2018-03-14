@@ -38,6 +38,37 @@ const chaiAssertionPredicate = (failure: Lint.RuleFailure, source: ts.SourceFile
 };
 
 /**
+ * Predicate to determine given failure is chai's `should` assertion.
+ * It relies on naive assumptions based on chai assertion syntax.
+ */
+const withoutShouldAssertions = (failure: Lint.RuleFailure, source: ts.SourceFile) => {
+  const failurePosition = failure.getStartPosition();
+  const token = tsutils.getTokenAtPosition(source, failurePosition.getPosition());
+
+  //for any reason locating token is not available, falls back to default rule
+  if (!token) {
+    return true;
+  }
+
+  let last = token;
+  let current = token.parent;
+  // scan through parents for a property access expression
+  // stop when hitting expression statement
+  while (current && !tsutils.isExpressionStatement(current)) {
+    if (tsutils.isPropertyAccessExpression(current)) {
+      if (current.name.text === 'should') {
+        // make sure there is at least one more property access after should
+        return tsutils.isPropertyAccessExpression(last);
+      }
+    }
+    last = current;
+    current = current.parent;
+  }
+
+  return true;
+};
+
+/**
  * Implements no-unused-expression-chai rules
  * To honor base rule's behavior, it inherits from default no-unused-expression rule
  * and override specific failure only
@@ -49,9 +80,11 @@ export class Rule extends BaseUnusedExpressionRule {
    *
    */
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    const failures = super.apply(sourceFile);
+    const failures: Lint.RuleFailure[] = super.apply(sourceFile);
     if (failures && failures.length > 0) {
-      return failures.filter((x) => chaiAssertionPredicate(x, sourceFile));
+      return failures
+        .filter((x) => chaiAssertionPredicate(x, sourceFile))
+        .filter((x) => withoutShouldAssertions(x, sourceFile));
     }
 
     return failures;
