@@ -45,23 +45,21 @@ const withoutShouldAssertions = (failure: Lint.RuleFailure, source: ts.SourceFil
   const failurePosition = failure.getStartPosition();
   const token = tsutils.getTokenAtPosition(source, failurePosition.getPosition());
 
-  //for any reason locating token is not available, falls back to default rule
+  // for any reason locating token is not available, falls back to default rule
   if (!token) {
     return true;
   }
 
-  let last = token;
-  let current = token.parent;
+  let current: ts.Node | undefined = token;
   // scan through parents for a property access expression
   // stop when hitting expression statement
   while (current && !tsutils.isExpressionStatement(current)) {
     if (tsutils.isPropertyAccessExpression(current)) {
       if (current.name.text === 'should') {
         // make sure there is at least one more property access after should
-        return tsutils.isPropertyAccessExpression(last);
+        return current.parent && !tsutils.isPropertyAccessExpression(current.parent);
       }
     }
-    last = current;
     current = current.parent;
   }
 

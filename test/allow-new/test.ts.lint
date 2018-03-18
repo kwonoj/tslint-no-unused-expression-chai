@@ -155,6 +155,8 @@ tips.should.not.have.been.called;
 method().prop.fancy().should.work;
 method(whatever).prop.fancy('').should.work;
 method(undefined, null).prop.fancy(NaN).should.work;
+method(whatever).prop.fancy('').other.should.work;
+devStore.subscribe.should.have.been.calledOnce;
 
 forgot.to.assert.should // there needs to be at least one more property access
 ~~~~~~~~~~~~~~~~~~~~~~~ [0]
