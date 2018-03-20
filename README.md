@@ -6,7 +6,9 @@
 From tslint 5, lint applies `no-unused-expression` more strictly. This affects
 test assertion written via [`chai`](http://chaijs.com/), as its `expect` assertion is form of expression caught by lint. `tslint-no-unused-expression-chai` provides drop-in replacement of rule `no-unused-expression` to loosen lint checker for chai's assertion.
 
-This module supports chai's `expect` based assertion (i.e `expect(x).to.be....`), while other type of property based assertion still may not work.
+This module supports chai's `expect` based assertion (i.e `expect(x).to.be....`).
+When adding `"should"` to the rule configuration, it also supports those assertios.
+Other type of property based assertion still may not work.
 
 # Install
 

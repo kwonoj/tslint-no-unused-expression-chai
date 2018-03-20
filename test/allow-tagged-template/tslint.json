@@ -2,7 +2,8 @@
   "rules": {
     "no-unused-expression-chai": [
       true,
-      "allow-tagged-template"
+      "allow-tagged-template",
+      "should"
     ]
   },
   "rulesDirectory": [

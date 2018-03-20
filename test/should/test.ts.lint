@@ -233,17 +233,11 @@ expect(1).to.be.exist;
 expect(undefined).to.be.empty;
 
 tips.should.not.have.been.called;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 method().prop.fancy().should.work;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 method(whatever).prop.fancy('').should.work;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 method(undefined, null).prop.fancy(NaN).should.work;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 method(whatever).prop.fancy('').other.should.work;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 devStore.subscribe.should.have.been.calledOnce;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [0]
 
 forgot.to.assert.should // there needs to be at least one more property access
 ~~~~~~~~~~~~~~~~~~~~~~~ [0]
