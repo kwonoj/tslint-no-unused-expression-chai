@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "no-unused-expression-chai": [true, "should"]
+  },
+  "rulesDirectory": [
+    "../../rules"
+  ]
+}

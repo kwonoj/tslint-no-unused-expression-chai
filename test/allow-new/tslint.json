@@ -3,7 +3,8 @@
     "no-unused-expression-chai": [
       true,
       "allow-new",
-      "allow-fast-null-checks"
+      "allow-fast-null-checks",
+      "should"
     ]
   },
   "rulesDirectory": [
