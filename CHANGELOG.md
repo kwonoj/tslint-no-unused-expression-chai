@@ -1,3 +1,19 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/kwonoj/tslint-no-unused-expression-chai/compare/v0.0.3...v0.1.3) (2018-03-20)
+
+
+### Bug Fixes
+
+* **noUnusedExpressionChaiRule:** supporting more cases of should ([24229a4](https://github.com/kwonoj/tslint-no-unused-expression-chai/commit/24229a4))
+
+
+### Features
+
+* **noUnusedExpressionChaiRule:** added config option for enabling should support ([1618b7b](https://github.com/kwonoj/tslint-no-unused-expression-chai/commit/1618b7b))
+* **noUnusedExpressionChaiRule:** added support for `should` assertions ([b1d8621](https://github.com/kwonoj/tslint-no-unused-expression-chai/commit/b1d8621)), closes [#9](https://github.com/kwonoj/tslint-no-unused-expression-chai/issues/9)
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/kwonoj/tslint-no-unused-expression-chai/compare/v0.0.2...v0.0.3) (2017-09-30)
 
