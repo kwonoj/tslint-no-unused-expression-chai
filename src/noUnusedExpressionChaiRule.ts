@@ -110,7 +110,11 @@ const withoutShouldAssertions = (failure: Lint.RuleFailure, source: ts.SourceFil
  */
 export class Rule extends BaseUnusedExpressionRule {
 
-  public static metadata = {...BaseUnusedExpressionRule.metadata, ...TSLINT_META};
+  public static metadata = {
+    ...BaseUnusedExpressionRule.metadata,
+    ...TSLINT_META,
+    ruleName: 'no-unused-expression-chai'
+  };
   /**
    * Apply rules. Simply walk source by default rule first, and filter out chai expression
    *
