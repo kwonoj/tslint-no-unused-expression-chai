@@ -1,3 +1,19 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/kwonoj/tslint-no-unused-expression-chai/compare/v0.1.3...v0.1.4) (2018-10-03)
+
+
+### Bug Fixes
+
+* **noUnusedExpressionChaiRule:** corrected ruleName in metadata ([692ce5b](https://github.com/kwonoj/tslint-no-unused-expression-chai/commit/692ce5b)), closes [kwonoj/tslint-no-unused-expression-chai#17](https://github.com/kwonoj/tslint-no-unused-expression-chai/issues/17) [#17](https://github.com/kwonoj/tslint-no-unused-expression-chai/issues/17)
+* **package:** bump up dependencies ([40911fd](https://github.com/kwonoj/tslint-no-unused-expression-chai/commit/40911fd))
+
+
+### BREAKING CHANGES
+
+* **package:** drop support for node.js <= 5
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/kwonoj/tslint-no-unused-expression-chai/compare/v0.0.3...v0.1.3) (2018-03-20)
 
