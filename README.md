@@ -1,7 +1,9 @@
 [![Build Status](https://travis-ci.org/kwonoj/tslint-no-unused-expression-chai.svg?branch=master)](https://travis-ci.org/kwonoj/tslint-no-unused-expression-chai)
 [![npm](https://img.shields.io/npm/v/tslint-no-unused-expression-chai.svg)](https://www.npmjs.com/package/tslint-no-unused-expression-chai)
 
-# tslint-no-unused-expression-chai
+# tslint-no-unused-expression-chai (DEPRECATED)
+
+# Per tslint being deprecated, this rules no longer being updated.
 
 From tslint 5, lint applies `no-unused-expression` more strictly. This affects
 test assertion written via [`chai`](http://chaijs.com/), as its `expect` assertion is form of expression caught by lint. `tslint-no-unused-expression-chai` provides drop-in replacement of rule `no-unused-expression` to loosen lint checker for chai's assertion.
